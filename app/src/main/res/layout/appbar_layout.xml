@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clAppbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/list_bg_color">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAppBarHeading"
+            style="@style/fontSemiBold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginStart="@dimen/_70"
+            android:text="Heading" />
+
+        <LinearLayout
+            android:id="@+id/llWhiteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="@dimen/_15"
+            android:padding="@dimen/_04">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSearchListIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            style="@style/fontSemiBold20"
+            android:layout_marginLeft="@dimen/_15"
+            android:layout_marginRight="@dimen/_15"
+            android:src="@drawable/search" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearchListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="right|center"
+            style="@style/fontSemiBold20"
+            android:layout_marginLeft="@dimen/_15"
+            android:layout_marginRight="@dimen/_15"
+            android:drawableRight="@drawable/search_cancel" />
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    //dark theme color
+    <color name="darkColorPrimary">#FFFFFF</color>
+    <color name="tabColorDarkColorPrimaryUnselected">#81FFFFFF</color>
+    <color name="darkColorPrimaryDark">#FFFFFF</color>
+    <color name="darkColorAccent">#FFFFFF</color>
+    <color name="darkPrimaryText">#353535</color>
+    <color name="darkButtonNormal">#7540EE</color>
+    <color name="darkButtonHighlight">#7540EE</color>
+    <color name="darkButtonText">#FFFFFF</color>
+    <color name="darkEdtHintTextColor">#80353535</color>
+    <color name="darkEdtBackgroundColor">#40353535</color>
+    <color name="darkFabTextColor">#26353535</color>
+    <color name="darkOpacityTen">#1A353535</color>
+    <color name="darkEventBAckground">#80D6EFFF</color>
+
+
+    //light theme color
+    <color name="lightColorPrimary">#7540EE</color>
+    <color name="lightColorPrimaryDark">#7540EE</color>
+    <color name="lightColorAccent">#7540EE</color>
+    <color name="lightPrimaryText">#FFFFFF</color>
+    <color name="lightButtonNormal">#97DFFC</color>
+    <color name="lightButtonHighlight">#97DFFC</color>
+    <color name="lightColor">#8097DFFC</color>
+    <color name="lightButtonText">#353535</color>
+    <color name="lightEdtHintTextColor">#80FFFFFF</color>
+    <color name="lightEdtBackgroundColor">#40FFFFFF</color>
+    <color name="lightFabTextColor">#9166F1</color>
+    <color name="lightOpacityTen">#1AFFFFFF</color>
+    <color name = "lightThemeNotificationColor">#0D353535</color>
+    <color name = "lightButtonText30">#F4F4F4</color>
+
+
+    //other Color
+    <color name ="black">#353535</color>
+    <color name ="blackOpacity50">#80353535</color>
+    <color name="white">#FFFFFF</color>
+    <color name="list_bg_color">#171717</color>
+</resources>

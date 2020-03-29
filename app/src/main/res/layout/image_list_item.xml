@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.mocklist.viewobservers.homePageViewObserver.adapter.ImageViewObserver" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_06"
+        android:layout_marginRight="@dimen/_06"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140"
+            android:scaleType="fitXY"
+            app:imageResource="@{data.imageUrl}"
+            android:src="@drawable/poster1"
+            app:layout_constraintBottom_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvImgHeading"
+            style="@style/fontBold14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_04"
+            android:layout_marginBottom="@dimen/_04"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:includeFontPadding="true"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="1"
+            android:lines="2"
+            android:text="@{data.imgHeader}"
+            app:autoSizeMaxTextSize="@dimen/_14"
+            app:autoSizeMinTextSize="@dimen/_04"
+            app:autoSizeTextType="uniform" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
