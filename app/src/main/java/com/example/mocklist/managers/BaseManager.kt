@@ -1,4 +1,4 @@
-package com.bigvand.surfboard.managers
+package com.example.mocklist.managers
 
 import android.content.Context
 import android.content.SharedPreferences

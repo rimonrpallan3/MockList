@@ -11,16 +11,16 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black">
 
-        <androidx.appcompat.widget.Toolbar
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:elevation="@dimen/_04"
-            app:contentInsetStart="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -30,7 +30,7 @@
                 android:layout_height="match_parent" />
 
 
-        </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvVerificationPhotoIdList"
@@ -38,8 +38,9 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:visibility="visible"
-            android:layout_marginLeft="@dimen/_06"
-            android:layout_marginRight="@dimen/_06"
+            android:paddingTop="@dimen/_22"
+            android:layout_marginLeft="@dimen/_08"
+            android:layout_marginRight="@dimen/_08"
             app:adapter="@{data.imageList}"
             app:spanCount="7"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

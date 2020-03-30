@@ -7,23 +7,23 @@ import android.view.View
 import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import com.bigvand.surfboard.utils.setRxOnClickListener
-import com.bigvand.surfboard.utils.setRxOnEditTextChangeAfter
-import com.bigvand.surfboard.view.BaseFragment
+import com.example.mocklist.utils.setRxOnClickListener
+import com.example.mocklist.utils.setRxOnEditTextChangeAfter
+import com.example.mocklist.view.BaseFragment
+import com.example.mocklist.R
 import com.example.mocklist.databinding.FragmentHomePageBinding
-import com.example.mocklist.model.Content
+import com.example.mocklist.utils.Utils
 import com.example.mocklist.viewmodel.homepage.HomePageViewModel
 import com.example.mocklist.viewobservers.homePageViewObserver.HomePageViewObserver
 import kotlinx.android.synthetic.main.appbar_layout.*
+import kotlinx.android.synthetic.main.fragment_home_page.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class HomePageFragment : BaseFragment() {
 
-
     private var mViewObserver = HomePageViewObserver()
     private val mViewModel: HomePageViewModel by sharedViewModel()
-    private var mContent:List<Content> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,24 +41,46 @@ class HomePageFragment : BaseFragment() {
         loadData()
     }
 
-    fun loadData(){
-        mViewModel.getMyDataImageList().observe(this, Observer {page ->
-            mViewObserver.setImgList(page.content_items.content)
-            tvAppBarHeading.setText(page.title)
+    override fun onResume() {
+        super.onResume()
+        loadData()
+    }
+
+
+    /**
+     * Function to load the Data from json file using pagination
+     */
+
+    private fun loadData(){
+        mViewModel.getDataList().observe(this, Observer { page ->
+            mViewObserver.setImgList(page)
+            tvAppBarHeading.setText(R.string.Romantic_Comedy)
 
         })
     }
 
-    fun loadButtonFunctionality(){
+    /**
+     * Function to handle different button clicks
+     */
+
+    private fun loadButtonFunctionality(){
         ivSearchListIcon.setRxOnClickListener {
             llWhiteButton.visibility = View.GONE
             tvAppBarHeading.visibility = View.GONE
             etSearchListView.visibility = View.VISIBLE
             ivSearchListIcon.visibility = View.GONE
-
+            Utils.showKeyboard(activity!!)
         }
         etSearchListView.setRxOnEditTextChangeAfter {
-
+            if (it.length >= 3){
+                mViewModel.getDataListSearch(it).observe(this, Observer { page ->
+                    if (page.isNotEmpty()){
+                        mViewObserver.setImgList(page)
+                    }else{
+                        Utils.showSnackBar(clMainLayout, "No Data Found")
+                    }
+                })
+            }
         }
 
         etSearchListView.setOnTouchListener(OnTouchListener { v, event ->
@@ -75,12 +97,17 @@ class HomePageFragment : BaseFragment() {
                     llWhiteButton.visibility = View.VISIBLE
                     tvAppBarHeading.visibility = View.VISIBLE
                     etSearchListView.visibility = View.GONE
+                    Utils.hideKeyboard(activity!!)
+                    loadData()
                     return@OnTouchListener true
                 }
             }
             false
         })
 
+        llWhiteButton.setRxOnClickListener {
+            activity!!.finish()
+        }
 
     }
 

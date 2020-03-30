@@ -1,6 +1,6 @@
-package com.bigvand.surfboard.injection
+package com.example.mocklist.injection
 
-import com.bigvand.surfboard.managers.SessionManager
+import com.example.mocklist.managers.SessionManager
 import com.example.mocklist.repository.HomeRepository
 import com.example.mocklist.viewmodel.homepage.HomePageViewModel
 import org.koin.android.ext.koin.androidApplication
@@ -11,9 +11,9 @@ fun appModule() = module {
 
     single { SessionManager(androidApplication()) }
 
-    single { HomeRepository( get(), androidApplication()) }
+    single { HomeRepository( get()) }
 
-    viewModel { HomePageViewModel() }
+    viewModel { HomePageViewModel(get()) }
 
 
 }
