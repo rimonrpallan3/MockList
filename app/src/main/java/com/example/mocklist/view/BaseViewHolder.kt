@@ -1,4 +1,4 @@
-package com.bigvand.surfboard.view
+package com.example.mocklist.view
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
