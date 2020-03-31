@@ -54,8 +54,9 @@ class HomePageFragment : BaseFragment() {
     private fun loadData(){
         mViewModel.getDataList().observe(this, Observer { page ->
             mViewObserver.setImgList(page)
+            mViewObserver.setDataVisibility(true)
+            mViewObserver.setNoDataVisibility(false)
             tvAppBarHeading.text = mViewModel.getTitle()
-
         })
     }
 
@@ -68,6 +69,7 @@ class HomePageFragment : BaseFragment() {
             llWhiteButton.visibility = View.GONE
             tvAppBarHeading.visibility = View.GONE
             etSearchListView.visibility = View.VISIBLE
+            etSearchListView.requestFocus()
             ivSearchListIcon.visibility = View.GONE
             Utils.showKeyboard(activity!!)
         }
@@ -76,8 +78,11 @@ class HomePageFragment : BaseFragment() {
                 mViewModel.getDataListSearch(it, mViewObserver.getAdapterList()).observe(this, Observer { page ->
                     if (page.isNotEmpty()){
                         mViewObserver.setImgList(page)
+                        mViewObserver.setDataVisibility(true)
+                        mViewObserver.setNoDataVisibility(false)
                     }else{
-                        Utils.showSnackBar(clMainLayout, "No Data Found")
+                        mViewObserver.setDataVisibility(false)
+                        mViewObserver.setNoDataVisibility(true)
                     }
                 })
             }
@@ -96,12 +101,12 @@ class HomePageFragment : BaseFragment() {
                         .get(DRAWABLE_RIGHT).getBounds().width()
                 ) {
                     // your action here
+                    Utils.hideKeyboard(activity!!)
                     ivSearchListIcon.visibility = View.VISIBLE
                     llWhiteButton.visibility = View.VISIBLE
                     tvAppBarHeading.visibility = View.VISIBLE
                     etSearchListView.visibility = View.GONE
                     etSearchListView.text?.clear()
-                    Utils.hideKeyboard(activity!!)
                     loadData()
                     return@OnTouchListener true
                 }

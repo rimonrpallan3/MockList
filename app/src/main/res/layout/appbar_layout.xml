@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
             android:layout_marginStart="@dimen/_50"
-            android:text="Heading" />
+            android:text="@string/heading" />
 
         <LinearLayout
             android:id="@+id/llWhiteButton"
@@ -62,7 +62,10 @@
             android:layout_marginLeft="@dimen/_15"
             android:layout_marginRight="@dimen/_15"
             android:backgroundTint="@color/white"
-            android:drawableRight="@drawable/search_cancel" />
+            android:textCursorDrawable="@color/white"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:drawableEnd="@drawable/ic_close" />
 
 
     </FrameLayout>
