@@ -22,4 +22,8 @@ class HomePageViewObserver : BaseObservable()  {
         mRomanticPageAdapter.submitList(page)
         mRomanticPageAdapter.notifyDataSetChanged()
     }
+
+    fun getAdapterList(): PagedList<Content>? {
+        return mRomanticPageAdapter.currentList
+    }
 }

@@ -19,7 +19,7 @@ data class Page(
 )
 
 data class ContentItems(
-    val content: List<Content>
+    val content: ArrayList<Content>
 )
 
 data class Content(

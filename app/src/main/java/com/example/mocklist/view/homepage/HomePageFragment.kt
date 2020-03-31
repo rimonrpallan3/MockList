@@ -54,7 +54,7 @@ class HomePageFragment : BaseFragment() {
     private fun loadData(){
         mViewModel.getDataList().observe(this, Observer { page ->
             mViewObserver.setImgList(page)
-            tvAppBarHeading.setText(R.string.Romantic_Comedy)
+            tvAppBarHeading.text = mViewModel.getTitle()
 
         })
     }
@@ -73,13 +73,16 @@ class HomePageFragment : BaseFragment() {
         }
         etSearchListView.setRxOnEditTextChangeAfter {
             if (it.length >= 3){
-                mViewModel.getDataListSearch(it).observe(this, Observer { page ->
+                mViewModel.getDataListSearch(it, mViewObserver.getAdapterList()).observe(this, Observer { page ->
                     if (page.isNotEmpty()){
                         mViewObserver.setImgList(page)
                     }else{
                         Utils.showSnackBar(clMainLayout, "No Data Found")
                     }
                 })
+            }
+            if (it.isEmpty()){
+                loadData()
             }
         }
 
@@ -97,6 +100,7 @@ class HomePageFragment : BaseFragment() {
                     llWhiteButton.visibility = View.VISIBLE
                     tvAppBarHeading.visibility = View.VISIBLE
                     etSearchListView.visibility = View.GONE
+                    etSearchListView.text?.clear()
                     Utils.hideKeyboard(activity!!)
                     loadData()
                     return@OnTouchListener true

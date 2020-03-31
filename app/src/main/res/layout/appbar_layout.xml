@@ -15,11 +15,11 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvAppBarHeading"
-            style="@style/fontSemiBold20"
+            style="@style/FontRegular20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
-            android:layout_marginStart="@dimen/_70"
+            android:layout_marginStart="@dimen/_50"
             android:text="Heading" />
 
         <LinearLayout
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center"
-            style="@style/fontSemiBold20"
+            style="@style/FontRegular20"
             android:layout_marginLeft="@dimen/_15"
             android:layout_marginRight="@dimen/_15"
             android:src="@drawable/search" />
@@ -56,8 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:inputType="text"
             android:layout_gravity="right|center"
-            style="@style/fontSemiBold20"
+            style="@style/FontRegular20"
             android:layout_marginLeft="@dimen/_15"
             android:layout_marginRight="@dimen/_15"
             android:backgroundTint="@color/white"

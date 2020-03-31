@@ -11,9 +11,8 @@ fun appModule() = module {
 
     single { SessionManager(androidApplication()) }
 
-    single { HomeRepository( get()) }
+    single { HomeRepository(get(), get()) }
 
-    viewModel { HomePageViewModel(get()) }
-
+    viewModel { HomePageViewModel(get(), get()) }
 
 }
