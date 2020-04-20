@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.mocklist.viewobservers.otpPageViewObserver.OtpPageViewObserver" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOtpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.mocklist.view.otpPage.OtpFragment">
+
+        <FrameLayout
+            android:id="@+id/frameTopLine"
+            android:layout_width="@dimen/_45"
+            android:layout_height="@dimen/_04"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_08"
+            app:layout_constraintTop_toBottomOf="@id/frameTopLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22"
+                android:gravity="center" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvHeading"
+                android:layout_marginStart="@dimen/_45"
+                android:layout_marginTop="@dimen/_16"
+                android:layout_marginEnd="@dimen/_50"
+                android:alpha="0.5"
+                android:gravity="center"
+                android:text="/" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llOTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSubHeading"
+                android:layout_marginTop="@dimen/_30"
+                android:gravity="center_horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP1"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+                <requestFocus />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP2"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP3"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP4"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP5"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOTP6"
+                    android:layout_width="@dimen/_45"
+                    android:layout_height="@dimen/_50"
+                    android:layout_marginStart="@dimen/_08"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnForwardButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llOTP"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_30"
+                android:layout_marginEnd="@dimen/_24"
+                android:layout_marginBottom="@dimen/_10"
+                >
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llOTP"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_50"
+                android:layout_marginTop="@dimen/_50"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/progressOTP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llOTP"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="65"
+                android:layout_marginStart="@dimen/_50"
+                android:layout_marginTop="@dimen/_50"/>
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

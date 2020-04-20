@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.mocklist.viewobservers.chatPageViewObserver.ChatStartViewObserver" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary_"
+        tools:context="com.example.mocklist.view.chatPage.ChatStartFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_45"
+            android:text="Chat App"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_18"
+            android:layout_marginTop="@dimen/_24"
+            android:layout_marginRight="@dimen/_18"
+            android:background="@color/colorPrimaryDark_"
+            android:paddingStart="@dimen/_16"
+            android:paddingTop="@dimen/_16"
+            android:paddingEnd="@dimen/_16"
+            android:paddingBottom="@dimen/_16"
+            android:text="SignUp"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvSignedUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_18"
+            android:layout_marginTop="@dimen/_24"
+            android:layout_marginRight="@dimen/_18"
+            android:background="@color/colorPrimaryDark_"
+            android:paddingStart="@dimen/_16"
+            android:paddingTop="@dimen/_16"
+            android:paddingEnd="@dimen/_16"
+            android:paddingBottom="@dimen/_16"
+            android:text="Login"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

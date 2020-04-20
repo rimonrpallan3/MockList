@@ -1,9 +1,9 @@
 {
   "page": {
     "title": "Romantic Comedy",
-    "total-content-items" : "54",
-    "page-num" : "2",
-    "page-size" : "20",
+    "total-content-items": "54",
+    "page-num": "2",
+    "page-size": "20",
     "content-items": {
       "content": [
         {
@@ -46,7 +46,7 @@
           "name": "Rear Window",
           "poster-image": "poster5.jpg"
         },
-                {
+        {
           "name": "Rear Window",
           "poster-image": "poster5.jpg"
         },

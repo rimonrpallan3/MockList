@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.mocklist.viewobservers.chatPageViewObserver.ChatRegisterViewObserver" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.mocklist.view.chatPage.ChatRegisterFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Create a new account"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:focusable="true"
+            android:layout_marginLeft="@dimen/_18"
+            android:layout_marginTop="@dimen/_24"
+            android:layout_marginRight="@dimen/_18"
+            android:paddingStart="@dimen/_16"
+            android:paddingTop="@dimen/_16"
+            android:paddingEnd="@dimen/_16"
+            android:paddingBottom="@dimen/_16"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@+id/tvHeading"
+            app:layout_constraintLeft_toLeftOf="@+id/tvHeading"
+            app:layout_constraintRight_toRightOf="@+id/tvHeading"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading"
+            app:met_floatingLabel="normal" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="@dimen/_18"
+            android:layout_marginTop="@dimen/_24"
+            android:layout_marginRight="@dimen/_18"
+            android:paddingStart="@dimen/_16"
+            android:paddingTop="@dimen/_16"
+            android:paddingEnd="@dimen/_16"
+            android:paddingBottom="@dimen/_16"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@+id/username"
+            app:layout_constraintLeft_toLeftOf="@+id/username"
+            app:layout_constraintRight_toRightOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:met_floatingLabel="normal" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginLeft="@dimen/_18"
+            android:layout_marginTop="@dimen/_24"
+            android:layout_marginRight="@dimen/_18"
+            android:paddingStart="@dimen/_16"
+            android:paddingTop="@dimen/_16"
+            android:paddingEnd="@dimen/_16"
+            android:paddingBottom="@dimen/_16"
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintLeft_toLeftOf="@+id/email"
+            app:layout_constraintRight_toRightOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:met_floatingLabel="normal" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDark_"
+            android:layout_margin="@dimen/_16"
+            android:text="register"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toEndOf="@+id/password"
+            app:layout_constraintLeft_toLeftOf="@+id/password"
+            app:layout_constraintRight_toRightOf="@+id/password"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

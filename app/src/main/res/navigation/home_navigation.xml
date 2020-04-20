@@ -3,13 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation"
-    app:startDestination="@id/homePageFragment">
+    app:startDestination="@id/flowPageFragment">
+
+
+
+    <fragment
+        android:id="@+id/flowPageFragment"
+        android:name="com.example.mocklist.view.flowPage.FlowPageFragment"
+        android:label="FlowPageFragment"
+        tools:layout="@layout/fragment_flow">
+
+        <action
+            android:id="@+id/action_flowPageFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"
+            />
+
+        <action
+            android:id="@+id/action_flowPageFragment_to_otpPageFragment"
+            app:destination="@id/otpPageFragment"
+            />
+
+        <action
+            android:id="@+id/action_flowPageFragment_to_chatStartPageFragment"
+            app:destination="@id/chatStartFragment"
+            />
+
+
+    </fragment>
 
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.example.mocklist.view.homepage.HomePageFragment"
         android:label="HomePageFragment"
         tools:layout="@layout/fragment_home_page">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatRegisterFragment"
+        android:name="com.example.mocklist.view.chatPage.ChatRegisterFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_chat_register">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatSignInPage"
+        android:name="com.example.mocklist.view.chatPage.ChatLoginFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_chat_signin">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpPageFragment"
+        android:name="com.example.mocklist.view.otpPage.OtpFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_otp_page">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatStartFragment"
+        android:name="com.example.mocklist.view.chatPage.ChatStartFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_chat_start">
+        <action
+            android:id="@+id/action_chatStartPageFragment_to_chatRegisterPage"
+            app:destination="@id/chatRegisterFragment"
+            />
+
+        <action
+            android:id="@+id/action_chatStartPageFragment_to_chatSignInPage"
+            app:destination="@id/chatSignInPage"
+            />
+
 
     </fragment>
 

@@ -3,13 +3,17 @@
 buildscript {
 
     ext {
-        build_tools_gradle_version = '3.6.1'
+        build_tools_gradle_version = '3.6.3'
         kotlin_version = '1.3.61'
         support_library_version = '1.1.0'
         constraint_layout_version = '1.1.3'
         legacy_support_version = '1.0.0'
         material_design_version = '1.0.0'
         fragment_version = '1.0.0'
+        firebase_analytics = '17.3.0'
+        firebase_crashlytics_app = '17.0.0-beta04'
+        firebase_auth = '19.3.0'
+        firebase_database = '19.2.1'
 
         support_libraries = [
                 "androidx.appcompat:appcompat:$support_library_version",
@@ -18,7 +22,7 @@ buildscript {
         ]
 
         lifecycle_version = '2.1.0'
-
+        firebase_perf = '19.0.5'
         //Armadillo - Encrypted Shared Preference  https://github.com/patrickfav/armadillo
         preference_armadillo_version = '0.8.0'
         //Koin dependants injection
@@ -111,6 +115,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:${build_tools_gradle_version}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
