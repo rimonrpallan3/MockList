@@ -39,4 +39,9 @@ abstract class BaseManager<T>(mContext: Context, clazz: Class<T>) {
             commit()
         }
     }
+
+    protected fun removeKey(key: String) {
+        mSharedPreferences.edit().remove(key).commit()
+    }
+
 }

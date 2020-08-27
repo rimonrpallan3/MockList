@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MockList</string>
     <string name="Romantic_Comedy">Romantic Comedy</string>
+
+
+
+    <string name="oops_no_network">No internet connection</string>
+    <string name="please_check_try_again_sometime_later">please try again sometime later</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="invalid_email">Sorry, the given mail address is incorrect</string>
 </resources>

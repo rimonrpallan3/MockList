@@ -3,8 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation"
-    app:startDestination="@id/flowPageFragment">
+    app:startDestination="@id/employeeListPageFragment">
 
+
+    <fragment
+        android:id="@+id/employeeListPageFragment"
+        android:name="com.example.mocklist.view.employeeListPage.EmployeeListPageFragment"
+        android:label="FlowPageFragment"
+        tools:layout="@layout/fragment_employee_list">
+
+        <action
+            android:id="@+id/action_employeeListPageFragment_to_employeeProfilePageFragment"
+            app:destination="@id/employeeProfilePageFragment"
+            />
+
+
+    </fragment>
 
 
     <fragment
@@ -60,6 +74,14 @@
         android:name="com.example.mocklist.view.otpPage.OtpFragment"
         android:label="HomePageFragment"
         tools:layout="@layout/fragment_otp_page">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/employeeProfilePageFragment"
+        android:name="com.example.mocklist.view.employeeProfile.EmployeeProfilePageFragment"
+        android:label="EmployeeProfilePageFragment"
+        tools:layout="@layout/fragment_employee_profile">
 
     </fragment>
 

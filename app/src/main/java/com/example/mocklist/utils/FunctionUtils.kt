@@ -27,6 +27,15 @@ fun EditText.setRxOnEditTextChangeAfter(function: (String) -> Unit): Disposable 
                 function(editable.toString())
             }
         }
+
+  /*  *//**
+     * Fun to call API and shown Error dialog easily
+     **//*
+    fun networkCallWithRetry(function: (ConnectionErrorMessageDialogFragment) -> Unit) {
+        val errorDialog = ConnectionErrorMessageDialogFragment()
+        errorDialog.setRetry { function(errorDialog) }
+        function(errorDialog)
+    }*/
 }
 
 

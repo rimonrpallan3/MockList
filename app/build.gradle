@@ -22,6 +22,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     dataBinding {
         enabled = true
     }
@@ -47,6 +48,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             manifestPlaceholders = [crashlyticsEnabled: false]
         }
+    }
+
+    flavorDimensions "environment"
+
+    productFlavors {
+        develop {
+            dimension "environment"
+            applicationIdSuffix ""
+            buildConfigField "String", base_url, base_url_dev
+            buildConfigField "String", environment, environment_dev
+        }
+
     }
 
 }
@@ -107,6 +120,8 @@ dependencies {
     //material design
     implementation "com.google.android.material:material:$material_design_version"
 
+    //inspect data in chrome
+    implementation "com.facebook.stetho:stetho-okhttp3:$facebook_stetho_version"
 
     //pagination library
     implementation "androidx.paging:paging-runtime-ktx:$pagination_library_version"
